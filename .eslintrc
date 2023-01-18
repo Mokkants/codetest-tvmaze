@@ -1,0 +1,91 @@
+{
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    ],
+    "plugins": ["react", "react-hooks", "@typescript-eslint"],
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 9,
+      "sourceType": "module"
+    },
+    "ignorePatterns": ["jest.*.*", "__mocks__", "node_modules", "dist", "src/index.d.ts"],
+    "rules": {
+      "prettier/prettier": "off",
+      "react/display-name": "off",
+      "react/jsx-curly-spacing": "off",
+      "react/jsx-indent": "off",
+      "react/prop-types": "warn",
+      "react/no-deprecated": "off",
+      "max-lines": ["warn", 1100],
+      "no-nested-ternary": "warn",
+      "no-var": "warn",
+      "prefer-const": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": true,
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "react/jsx-uses-vars": "warn",
+      "react/jsx-uses-react": "warn",
+      "no-undef": "warn",
+      "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
+      "react-hooks/exhaustive-deps": "warn", // Checks useEffect dependencies
+      "no-console": "off",
+      "no-case-declarations": "off",
+      "no-empty": [
+        "warn",
+        {
+          "allowEmptyCatch": true
+        }
+      ],
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/unbound-method": "off",
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-unsafe-argument":"off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "no-implicit-globals": "warn",
+      "no-restricted-globals": ["warn", "location", "history"]
+    },
+    "overrides": [
+      {
+        "files": ["src/**/*.js", "src/**/*.jsx"],
+        "rules": {
+          "@typescript-eslint/no-implied-eval": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/restrict-template-expressions": "off",
+          "@typescript-eslint/no-unsafe-return": "off",
+          "@typescript-eslint/restrict-plus-operands": "off",
+          "@typescript-eslint/no-misused-promises": "off"
+        }
+      }
+    ],
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "detect"
+      }
+    }
+  }
+  
